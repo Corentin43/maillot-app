@@ -1,20 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- POLICES STYLE PREMIUM -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choix Maillot</title>
+    <title>Choix Maillots PRO</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
 <header>
     <button id="randomBtn">🎯 Choisir un maillot</button>
-    <h2 id="resultat"></h2>
 </header>
 
-<section class="container" id="listeMaillots">
+<!-- =========================
+     DETAIL FULLSCREEN
+========================= -->
+<section class="detail-page" id="detailPage">
+
+    <button id="backBtn">⬅</button>
+
+    <div class="detail-content">
+
+        <img id="detailImage" src="" alt="maillot">
+
+        <div class="detail-info">
+            <h1 id="detailNom"></h1>
+            <p id="detailTaille"></p>
+            <p id="detailPrix"></p>
+            <p id="detailFlocage"></p>
+        </div>
+
+    </div>
+
 </section>
+
+<!-- =========================
+     LISTE MAILLOTS
+========================= -->
+<section class="container" id="listeMaillots">
+
+    <div class="maillot" data-country="france" data-club="asse">
+        <h3 class="nom">ASSE EXTERIEUR</h3>
+        <img src="images/maillot2.jpg">
+        <p class="taille">Taille : L</p>
+        <p class="prix">Prix : 75€</p>
+        <p class="flocage">Flocage : PEDRO-39</p>
+    </div>
+
+    <div class="maillot" data-country="france" data-club="asse">
+        <h3 class="nom">ASSE THIRD</h3>
+        <img src="images/maillot3.jpg">
+        <p class="taille">Taille : L</p>
+        <p class="prix">Prix : 134.95€</p>
+        <p class="flocage">Flocage : CARDONA-7</p>
+    </div>
+
+    <div class="maillot" data-country="france" data-club="asse">
+        <h3 class="nom">ASSE FOURTH</h3>
+        <img src="images/maillot4.jpg">
+        <p class="taille">Taille : L</p>
+        <p class="prix">Prix : 134.95€</p>
+        <p class="flocage">Flocage : DAVITASHVILLI-22</p>
+    </div>
+
+    <div class="maillot" data-country="france" data-club="asse">
+        <h3 class="nom">ASSE ENTRAINEMENT</h3>
+        <img src="images/maillot5.jpg">
+        <p class="taille">Taille : M</p>
+        <p class="prix">Prix : 44.00€</p>
+    </div>
+
+    <div class="maillot" data-country="italy" data-club="palermo">
+        <h3 class="nom">PALERME DOMICILE</h3>
+        <img src="images/maillot6.jpg">
+        <p class="taille">Taille : M</p>
+        <p class="prix">Prix : 110.00€</p>
+        <p class="flocage">Flocage : DYBALA-9</p>
+    </div>
+
+    <div class="maillot" data-country="italy" data-club="milan">
+        <h3 class="nom">MILAN DOMICILE</h3>
+        <img src="images/maillot7.jpg">
+        <p class="taille">Taille : L</p>
+        <p class="prix">Prix : 115.00€</p>
+        <p class="flocage">Flocage : MODRIC-10</p>
+    </div>
+
+    <div class="maillot" data-country="italy" data-club="juventus">
+        <h3 class="nom">JUVENTUS EXTERIEUR</h3>
+        <img src="images/maillot8.jpg">
+        <p class="taille">Taille : L</p>
+        <p class="prix">Prix : 115.00€</p>
+        <p class="flocage">Flocage : YILDIZ-10</p>
+    </div>
+
+    <div class="maillot" data-country="italy" data-club="italy">
+        <h3 class="nom">ITALIE EXTERIEUR</h3>
+        <img src="images/maillot9.jpg">
+        <p class="taille">Taille : M</p>
+        <p class="prix">Prix : 115.00€</p>
+        <p class="flocage">Flocage : CHIESA-14</p>
+    </div>
+
+</section>
+
+<!-- =========================
+     PACK FIFA OVERLAY
+========================= -->
+<div id="packOverlay">
+
+    <div class="pack-stage">
+
+        <div class="pack-info">
+            <p id="packCountry"></p>
+            <p id="packClub"></p>
+        </div>
+
+        <img id="packImage" src="" alt="pack maillot">
+
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 
