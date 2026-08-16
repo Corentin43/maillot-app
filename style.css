@@ -1,63 +1,266 @@
+
+/* =========================
+   FONTS PREMIUM
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
 body {
     margin: 0;
-    font-family: Arial;
-    background: #f5f5f5;
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(180deg, #f5f5f5, #e9e9e9);
 }
 
-/* Bouton en haut */
+/* =========================
+   HEADER
+========================= */
 header {
-    position: sticky;
-    top: 0;
-    background: #027D43;
-    padding: 15px;
+    background: linear-gradient(90deg, #111, #1a1a1a);
+    padding: 12px;
     text-align: center;
-    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 #randomBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background: white;
+    padding: 10px 22px;
+    border-radius: 30px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(90deg, #d4af37, #f5d76e);
+    color: #111;
+    transition: 0.3s;
 }
 
-#resultat {
-    color: white;
-    margin-top: 10px;
+#randomBtn:hover {
+    transform: scale(1.08);
 }
 
-/* Grille */
+/* =========================
+   GRID 5 MAILLOTS
+========================= */
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     padding: 15px;
 }
 
-/* Carte maillot */
+/* =========================
+   CARTE MAILLOT PREMIUM
+========================= */
 .maillot {
-    background: white;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 16px;
     padding: 10px;
     text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Image */
+.maillot:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* IMAGE MAILLOT */
 .maillot img {
     width: 100%;
-    border-radius: 8px;
+    height: 130px;
+    object-fit: contain;
 }
 
-/* 📱 MOBILE */
+/* NOM MAILLOT */
+.nom {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    margin: 8px 0 4px;
+    color: #111;
+}
+
+/* INFOS CACHEES */
+.maillot p {
+    display: none;
+}
+
+/* =========================
+   PAGE DETAIL FULLSCREEN
+========================= */
+.detail-page {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+    color: white;
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+}
+
+#backBtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.detail-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 50px;
+    padding: 20px;
+}
+
+.detail-content img {
+    width: 320px;
+    max-width: 40%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7));
+}
+
+.detail-info h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 42px;
+    color: #d4af37;
+}
+
+.detail-info p {
+    font-size: 16px;
+    margin: 6px 0;
+    color: #ddd;
+}
+
+/* =========================
+   PACK FIFA OVERLAY
+========================= */
+#packOverlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.92), #000);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+/* CENTRE PACK */
+.pack-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================
+   DRAPEAU + LOGO CLUB (FIFA CARD STYLE)
+========================= */
+#packCountry img,
+#packClub img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    border-radius: 14px;
+
+    padding: 8px;
+    background: rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 0 12px rgba(212,175,55,0.25),
+        inset 0 0 10px rgba(0,0,0,0.4);
+
+    animation: popIn 0.4s ease;
+    transition: 0.3s;
+}
+
+/* hover premium */
+#packCountry img:hover,
+#packClub img:hover {
+    transform: scale(1.08);
+    border-color: rgba(212,175,55,0.9);
+    box-shadow: 0 0 20px rgba(212,175,55,0.7);
+}
+
+/* texte club */
+#packClub {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: #d4af37;
+    letter-spacing: 2px;
+}
+
+/* MAillot final */
+#packImage {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px gold);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* reveal */
+.reveal #packImage {
+    opacity: 1;
+}
+
+/* animation apparition */
+@keyframes popIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+        filter: blur(3px);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
+
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .maillot {
-        display: flex;
+    .detail-content {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .detail-content img {
+        max-width: 80%;
+    }
+
+    .detail-info h1 {
+        font-size: 30px;
+    }
+
+    #packCountry img,
+    #packClub img {
+        width: 110px;
+        height: 110px;
+    }
+
+    #packImage {
+        width: 180px;
+        height: 180px;
     }
 }
