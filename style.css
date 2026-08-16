@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+/* Bouton en haut */
+header {
+    position: sticky;
+    top: 0;
+    background: #027D43;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#randomBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#resultat {
+    color: white;
+    margin-top: 10px;
+}
+
+/* Grille */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+/* Carte maillot */
+.maillot {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Image */
+.maillot img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .maillot {
+        display: flex;
+        flex-direction: column;
+    }
+}
